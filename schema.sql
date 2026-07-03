@@ -1,0 +1,35 @@
+CREATE TABLE IF NOT EXISTS signup_items (
+  id TEXT PRIMARY KEY,
+  category TEXT NOT NULL,
+  item TEXT NOT NULL,
+  detail TEXT NOT NULL DEFAULT '',
+  claimed_by TEXT NOT NULL DEFAULT '',
+  sort_order INTEGER NOT NULL,
+  updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT OR IGNORE INTO signup_items (id, category, item, detail, claimed_by, sort_order) VALUES
+('costco_run', 'costco', 'Costco bulk run', 'Main bulk run for as much as we can get at Costco.', 'Jason, David, Squiggles', 10),
+('costco_buns', 'costco', 'Burger buns', '12-16 buns for Thursday burgers.', '', 20),
+('costco_burger_toppings', 'costco', 'Burger toppings', 'Lettuce, tomatoes, onions, sliced cheese.', '', 30),
+('costco_corn', 'costco', 'Corn', '10-12 ears.', '', 40),
+('costco_breakfast', 'costco', 'Easy breakfasts', 'Muffins, pastries, cereal, milk, fruit.', '', 50),
+('costco_lunch', 'costco', 'Lunch supplies', 'Sandwich bread, cold cuts, sliced cheese.', '', 60),
+('costco_snacks', 'costco', 'Snacks', 'Chips, salsa, queso, guac, pretzels, M&Ms, cookies, apples.', '', 70),
+('costco_drinks', 'costco', 'Drinks', 'Water, Gatorade/sports drinks, soda, beer/drinks as wanted.', '', 80),
+('costco_ice', 'costco', 'Ice', 'Enough for coolers and drinks.', '', 90),
+('costco_supplies', 'costco', 'Disposable supplies', 'Red cups, plates, forks, knives, spoons, Ziplocks, trash bags, paper towels.', '', 100),
+('not_costco_burger_meat', 'not_costco', 'Burger meat', '14-16 patties or meat for patties; butcher/store/bring.', '', 10),
+('not_costco_friday_dinner', 'not_costco', 'Friday dinner protein', 'Steak / tri-tip or equivalent for 10.', '', 20),
+('not_costco_saturday_dinner', 'not_costco', 'Saturday dinner protein', 'Pork tenderloin or chicken for 10.', '', 30),
+('not_costco_dinner_sides', 'not_costco', 'Dinner sides', 'Zucchini, salad, garlic bread, asparagus, potato salad.', '', 40),
+('not_costco_condiments', 'not_costco', 'Condiments / pantry gaps', 'Ketchup, mustard, mayo, butter, cooking oil, salt, pepper, coffee, creamer.', '', 50),
+('not_costco_toilet_paper', 'not_costco', 'Toilet paper', 'Bring if not covered by Costco run or campground supplies.', '', 60),
+('gear_weber', 'gear', 'Weber + propane', 'Elgin is bringing this again.', 'Elgin', 10),
+('gear_coolers', 'gear', 'Coolers / ice chests', 'Need enough for shared food and drinks.', '', 20),
+('gear_food_bins', 'gear', 'Hard-sided food bins', 'For food storage; do not leave food in tents.', '', 30),
+('gear_cooking_tools', 'gear', 'Cooking tools', 'Spatula, tongs, knife, cutting board, foil, serving tools.', '', 40),
+('gear_stove_backup', 'gear', 'Backup stove / fuel', 'Optional backup if someone has one.', '', 50),
+('gear_lighting', 'gear', 'Lanterns / camp lights', 'Helpful around the sites at night.', '', 60),
+('gear_wash', 'gear', 'Dish soap + sponge', 'Shared kitchen cleanup.', '', 70),
+('gear_games', 'gear', 'Games', 'Corn hole, ladder toss, dominoes, cards.', '', 80);

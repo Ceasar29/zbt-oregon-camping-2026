@@ -19,6 +19,8 @@
       --clay: #9b5f3c;
       --gold: #d4a84d;
       --soft: #edf2e9;
+      --sky: #e8f4f5;
+      --rose: #f3e8df;
       --shadow: 0 18px 44px rgba(23, 33, 27, .14);
     }
 
@@ -34,7 +36,8 @@
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--ink);
-      background: var(--paper);
+      background:
+        linear-gradient(180deg, #f8f7f1 0, #eef5f4 34%, #f7f0e8 68%, #f8f7f1 100%);
       line-height: 1.5;
     }
 
@@ -126,6 +129,7 @@
     .button.primary {
       background: #fff;
       color: var(--forest);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, .18);
     }
 
     .button.secondary {
@@ -172,13 +176,14 @@
     }
 
     main {
-      padding: 54px 0 80px;
+      padding: 44px 0 80px;
     }
 
     section {
       width: min(1180px, calc(100% - 36px));
       margin: 0 auto;
-      padding: 46px 0;
+      padding: 54px 0;
+      scroll-margin-top: 92px;
     }
 
     .section-head {
@@ -195,6 +200,16 @@
       line-height: 1.04;
       letter-spacing: 0;
       color: var(--forest);
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 74px;
+      height: 5px;
+      margin-top: 14px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold), var(--lake));
     }
 
     .section-head p,
@@ -225,11 +240,17 @@
       border: 1px solid var(--line);
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 10px 24px rgba(23, 33, 27, .06);
+      box-shadow: 0 12px 30px rgba(23, 33, 27, .08);
     }
 
     .panel {
       padding: 24px;
+    }
+
+    .panel,
+    .planning-card,
+    .shopping-area {
+      backdrop-filter: saturate(1.08);
     }
 
     .panel h3,
@@ -498,6 +519,9 @@
       gap: 10px;
       width: min(1180px, calc(100% - 36px));
       margin: 24px auto 0;
+      position: sticky;
+      top: 10px;
+      z-index: 5;
     }
 
     .quick-links a {
@@ -508,12 +532,29 @@
       padding: 10px 12px;
       border: 1px solid var(--line);
       border-radius: 8px;
-      background: var(--white);
+      background: rgba(255, 255, 255, .92);
       color: var(--forest);
       font-weight: 900;
       text-align: center;
       text-decoration: none;
       box-shadow: 0 8px 18px rgba(23, 33, 27, .06);
+      backdrop-filter: blur(10px);
+    }
+
+    .quick-links a:nth-child(1) {
+      border-top: 4px solid var(--gold);
+    }
+
+    .quick-links a:nth-child(2) {
+      border-top: 4px solid var(--lake);
+    }
+
+    .quick-links a:nth-child(3) {
+      border-top: 4px solid var(--clay);
+    }
+
+    .quick-links a:nth-child(4) {
+      border-top: 4px solid var(--moss);
     }
 
     .planning-grid {
@@ -528,6 +569,15 @@
       border-radius: 8px;
       background: var(--white);
       box-shadow: 0 10px 24px rgba(23, 33, 27, .06);
+      border-top: 5px solid var(--gold);
+    }
+
+    .planning-card:nth-child(2n) {
+      border-top-color: var(--lake);
+    }
+
+    .planning-card:nth-child(3n) {
+      border-top-color: var(--clay);
     }
 
     .planning-card h3 {
@@ -559,6 +609,141 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 14px;
+    }
+
+    .claim-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .claim-item {
+      display: grid;
+      gap: 8px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    .claim-top {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .claim-title {
+      color: var(--ink);
+      font-weight: 900;
+      line-height: 1.2;
+    }
+
+    .claim-detail {
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .claim-owner {
+      color: var(--forest);
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    .claim-button {
+      flex: 0 0 auto;
+      min-height: 34px;
+      padding: 7px 10px;
+      border: 1px solid var(--forest);
+      border-radius: 8px;
+      background: var(--forest);
+      color: #fff;
+      cursor: pointer;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .claim-button.secondary {
+      background: var(--white);
+      color: var(--forest);
+    }
+
+    .shopping-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .shopping-area {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      box-shadow: 0 10px 24px rgba(23, 33, 27, .06);
+      border-top: 5px solid var(--lake);
+    }
+
+    .shopping-area h3 {
+      margin: 0 0 10px;
+      color: var(--forest);
+      font-size: 20px;
+      line-height: 1.15;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .check-list label {
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      gap: 8px;
+      align-items: start;
+      color: var(--ink);
+      font-weight: 700;
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 6px;
+    }
+
+    .check-list label:hover {
+      background: var(--soft);
+    }
+
+    .check-list input {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      accent-color: var(--forest);
+    }
+
+    .check-list span span {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .check-list input:checked + span {
+      color: var(--muted);
+      text-decoration: line-through;
+    }
+
+    .status-line {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 14px;
     }
 
     .tagline {
@@ -628,8 +813,13 @@
       .trip-strip,
       .grid.two,
       .grid.three,
-      .amenities {
+      .amenities,
+      .shopping-grid {
         grid-template-columns: 1fr;
+      }
+
+      .claim-top {
+        display: grid;
       }
 
       .fact {
@@ -642,8 +832,66 @@
         padding: 6px 7px;
       }
 
+      section {
+        scroll-margin-top: 18px;
+      }
+
+      .quick-links {
+        position: static;
+        width: calc(100% - 36px);
+        margin-top: 16px;
+      }
+
       .button {
         width: 100%;
+      }
+    }
+
+    body.shopping-mode header,
+    body.shopping-mode .trip-strip,
+    body.shopping-mode .quick-links,
+    body.shopping-mode main > section:not(#shopping-list),
+    body.shopping-mode footer {
+      display: none;
+    }
+
+    body.shopping-mode main {
+      padding: 18px 0 40px;
+    }
+
+    body.shopping-mode #shopping-list {
+      padding-top: 0;
+    }
+
+    @media print {
+      header,
+      .trip-strip,
+      .quick-links,
+      main > section:not(#shopping-list),
+      footer,
+      .shopping-actions {
+        display: none !important;
+      }
+
+      body {
+        background: #fff;
+        color: #000;
+      }
+
+      main,
+      section {
+        padding: 0;
+        width: 100%;
+      }
+
+      .shopping-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .shopping-area,
+      .panel {
+        box-shadow: none;
+        break-inside: avoid;
       }
     }
   </style>
@@ -816,54 +1064,103 @@
     <section id="shopping-list">
       <div class="section-head">
         <h2>Shopping List</h2>
-        <p>Starter quantities for 10 people. Treat this as the first pass before people claim items.</p>
+        <p>Grouped by Costco store area first so the bulk run can move through the store without bouncing around. Checkmarks save on each person's phone only.</p>
       </div>
-      <div class="shopping-grid">
-        <article class="planning-card">
-          <h3>Meals</h3>
-          <ul>
-            <li>14-16 burger patties or meat for patties</li>
-            <li>12-16 burger buns</li>
-            <li>2 heads lettuce, 4 tomatoes, 2 onions, sliced cheese</li>
-            <li>10-12 ears corn</li>
-            <li>1 large macaroni salad or potato salad</li>
-            <li>2 loaves sandwich bread</li>
-            <li>Cold cuts: turkey, roast beef, salami, ham</li>
-            <li>1 pack sliced cheese for sandwiches</li>
-            <li>Steak / tri-tip for 10, or equivalent dinner protein</li>
-            <li>2-3 zucchini, salad kit, garlic bread</li>
-            <li>2 dozen eggs, bacon or sausage, hash browns, tortillas, shredded cheese</li>
-            <li>Pork tenderloin or chicken dinner protein for 10</li>
-            <li>Muffins / pastries for easy breakfasts</li>
+      <div class="shopping-actions">
+        <button class="button primary" type="button" id="shoppingModeButton">Shopping Mode</button>
+        <button class="button secondary" type="button" id="printShoppingButton">Print / Save PDF</button>
+        <button class="button secondary" type="button" id="resetShoppingButton">Clear My Checkmarks</button>
+      </div>
+      <div class="shopping-grid" id="shoppingChecklist">
+        <article class="shopping-area">
+          <h3>Costco: Produce / Fresh</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox" data-shop-id="produce_lettuce"><span>2 heads lettuce</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="produce_tomatoes"><span>4 tomatoes</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="produce_onions"><span>2 onions</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="produce_corn"><span>10-12 ears corn</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="produce_fruit"><span>Fruit <span>Apples, bananas, melon or whatever looks good.</span></span></label></li>
+            <li><label><input type="checkbox" data-shop-id="produce_salad"><span>Salad kit / green salad</span></label></li>
           </ul>
         </article>
-        <article class="planning-card">
-          <h3>Pantry + Snacks</h3>
-          <ul>
-            <li>Ketchup, mustard, mayo</li>
-            <li>Chips, salsa, queso, guac</li>
-            <li>Peanut butter pretzels</li>
-            <li>M&amp;Ms</li>
-            <li>Cookies, apples, bananas, melon</li>
-            <li>Butter</li>
-            <li>Coffee, creamer, coffee cups</li>
-            <li>Salt, pepper, cooking oil</li>
+        <article class="shopping-area">
+          <h3>Costco: Meat / Deli</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox" data-shop-id="meat_burgers"><span>Burger patties or burger meat <span>14-16 patties total.</span></span></label></li>
+            <li><label><input type="checkbox" data-shop-id="meat_friday"><span>Friday dinner protein <span>Steak / tri-tip or equivalent for 10.</span></span></label></li>
+            <li><label><input type="checkbox" data-shop-id="meat_saturday"><span>Saturday dinner protein <span>Pork tenderloin, chicken, or equivalent for 10.</span></span></label></li>
+            <li><label><input type="checkbox" data-shop-id="meat_bacon"><span>Bacon or breakfast sausage</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="meat_coldcuts"><span>Cold cuts <span>Turkey, roast beef, salami, ham.</span></span></label></li>
+            <li><label><input type="checkbox" data-shop-id="meat_side"><span>Macaroni salad or potato salad</span></label></li>
           </ul>
         </article>
-        <article class="planning-card">
-          <h3>Drinks + Supplies</h3>
-          <ul>
-            <li>2-3 cases water</li>
-            <li>1 case Gatorade / sports drinks</li>
-            <li>1 case soda</li>
-            <li>Beer / drinks as wanted</li>
-            <li>Whiskey / tequila if wanted</li>
-            <li>Ice <strong>(Costco)</strong></li>
-            <li>Propane for stoves / grill</li>
-            <li>Red cups, plates, forks, knives, spoons</li>
-            <li>Ziplock bags for sandwiches</li>
-            <li>Trash bags, paper towels, toilet paper</li>
-            <li>Sponge and dish soap</li>
+        <article class="shopping-area">
+          <h3>Costco: Bakery / Bread</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox" data-shop-id="bakery_buns"><span>12-16 burger buns</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="bakery_sandwich"><span>2 loaves sandwich bread</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="bakery_muffins"><span>Muffins / pastries <span>Easy breakfast and Sunday pack-up food.</span></span></label></li>
+            <li><label><input type="checkbox" data-shop-id="bakery_garlic"><span>Garlic bread</span></label></li>
+          </ul>
+        </article>
+        <article class="shopping-area">
+          <h3>Costco: Dairy / Refrigerated</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox" data-shop-id="dairy_cheese"><span>Sliced cheese <span>Burgers and sandwiches.</span></span></label></li>
+            <li><label><input type="checkbox" data-shop-id="dairy_shredded"><span>Shredded cheese</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="dairy_eggs"><span>2 dozen eggs</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="dairy_milk"><span>Milk</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="dairy_butter"><span>Butter</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="dairy_creamer"><span>Coffee creamer</span></label></li>
+          </ul>
+        </article>
+        <article class="shopping-area">
+          <h3>Costco: Pantry / Snacks</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox" data-shop-id="pantry_cereal"><span>Cereal</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="pantry_hashbrowns"><span>Hash browns</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="pantry_tortillas"><span>Tortillas</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="pantry_chips"><span>Chips</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="pantry_salsa"><span>Salsa, queso, guac</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="pantry_pretzels"><span>Peanut butter pretzels</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="pantry_candy"><span>M&amp;Ms / candy</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="pantry_cookies"><span>Cookies</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="pantry_coffee"><span>Coffee</span></label></li>
+          </ul>
+        </article>
+        <article class="shopping-area">
+          <h3>Costco: Drinks / Booze</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox" data-shop-id="drinks_water"><span>2-3 cases water</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="drinks_gatorade"><span>1 case Gatorade / sports drinks</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="drinks_soda"><span>1 case soda</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="drinks_beer"><span>Beer / drinks as wanted</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="drinks_liquor"><span>Whiskey / tequila if wanted</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="drinks_ice"><span>Ice</span></label></li>
+          </ul>
+        </article>
+        <article class="shopping-area">
+          <h3>Costco: Paper / Camp Supplies</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox" data-shop-id="supplies_cups"><span>Red cups</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="supplies_plates"><span>Plates, forks, knives, spoons</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="supplies_ziplocks"><span>Ziplock bags for sandwiches</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="supplies_trash"><span>Trash bags</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="supplies_paper"><span>Paper towels</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="supplies_tp"><span>Toilet paper</span></label></li>
+          </ul>
+        </article>
+        <article class="shopping-area">
+          <h3>Not Costco / Bring From Home</h3>
+          <ul class="check-list">
+            <li><label><input type="checkbox" data-shop-id="bring_weber"><span>Weber + propane <span>Elgin is bringing.</span></span></label></li>
+            <li><label><input type="checkbox" data-shop-id="bring_food_bins"><span>Hard-sided food bins</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="bring_coolers"><span>Coolers / ice chests</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="bring_tools"><span>Cooking tools <span>Spatula, tongs, knife, cutting board, foil.</span></span></label></li>
+            <li><label><input type="checkbox" data-shop-id="bring_lights"><span>Lanterns / camp lights</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="bring_dish"><span>Dish soap + sponge</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="bring_games"><span>Games <span>Corn hole, ladder toss, dominoes, cards.</span></span></label></li>
+            <li><label><input type="checkbox" data-shop-id="bring_gaps"><span>Any Costco misses <span>Grab at Safeway / Walmart on the way.</span></span></label></li>
           </ul>
         </article>
       </div>
@@ -872,39 +1169,23 @@
     <section id="bringing">
       <div class="section-head">
         <h2>Who Is Bringing What</h2>
-        <p>Current draft assignments. This is the part that would be nicest to make live-editable once we add a small backend.</p>
+        <p>Click Claim, enter your name, and it saves for everyone. The Costco bulk run is already assigned to Jason, David, and Squiggles.</p>
       </div>
-      <div class="grid three">
+      <div class="grid three" id="claimBoard">
         <article class="planning-card">
-          <h3>Named Owners</h3>
-          <ul>
-            <li><strong>Elgin:</strong> Weber + propane</li>
-            <li><strong>Jason:</strong> prior-list idea: macaroni salad, sponge, lantern</li>
-            <li><strong>Squiggles:</strong> prior-list idea: flat griddle</li>
-          </ul>
+          <h3>Costco / Store Runs</h3>
+          <ul class="claim-list" data-claim-category="costco"><li>Loading...</li></ul>
         </article>
         <article class="planning-card">
-          <h3>Needs Claiming</h3>
-          <ul>
-            <li>Costco bulk food run</li>
-            <li>Meat / dinner protein run</li>
-            <li>Drinks and ice</li>
-            <li>Breakfast supplies</li>
-            <li>Sandwich lunch supplies</li>
-            <li>Snacks and pantry stuff</li>
-          </ul>
+          <h3>Not Costco / Bring</h3>
+          <ul class="claim-list" data-claim-category="not_costco"><li>Loading...</li></ul>
         </article>
         <article class="planning-card">
           <h3>Group Gear</h3>
-          <ul>
-            <li>Coolers / ice chests</li>
-            <li>Cooking tools</li>
-            <li>Food storage bins</li>
-            <li>Games: corn hole, ladder toss, dominoes, cards</li>
-          </ul>
+          <ul class="claim-list" data-claim-category="gear"><li>Loading...</li></ul>
         </article>
       </div>
-      <p class="note" style="margin-top:18px"><strong>Live signup idea:</strong> this public static site can show the list, but it cannot save shared edits by itself. To let people click an item and put their name next to it, we need a tiny free backend such as Cloudflare Worker + D1, Supabase free tier, or a Google Sheet/Form setup.</p>
+      <p class="status-line" id="claimStatus">Loading shared signup list...</p>
     </section>
 
     <section id="remember">
@@ -1164,5 +1445,132 @@
   <footer>
     Built for the July 2026 ZBT camping trip. Reservation details are from the CampLife confirmation emails for sites D24 and D25.
   </footer>
+  <script>
+    const checkStorageKey = "zbt-oregon-2026-shopping-checks";
+    const categoryLabels = {
+      costco: "Costco / Store Runs",
+      not_costco: "Not Costco / Bring",
+      gear: "Group Gear"
+    };
+
+    function readChecks() {
+      try {
+        return JSON.parse(localStorage.getItem(checkStorageKey) || "{}");
+      } catch {
+        return {};
+      }
+    }
+
+    function writeChecks(checks) {
+      localStorage.setItem(checkStorageKey, JSON.stringify(checks));
+    }
+
+    function setupShoppingTools() {
+      const checks = readChecks();
+      document.querySelectorAll("[data-shop-id]").forEach((box) => {
+        box.checked = Boolean(checks[box.dataset.shopId]);
+        box.addEventListener("change", () => {
+          const next = readChecks();
+          next[box.dataset.shopId] = box.checked;
+          writeChecks(next);
+        });
+      });
+
+      document.getElementById("printShoppingButton")?.addEventListener("click", () => window.print());
+      document.getElementById("resetShoppingButton")?.addEventListener("click", () => {
+        if (!confirm("Clear your shopping checkmarks on this device?")) return;
+        localStorage.removeItem(checkStorageKey);
+        document.querySelectorAll("[data-shop-id]").forEach((box) => {
+          box.checked = false;
+        });
+      });
+      document.getElementById("shoppingModeButton")?.addEventListener("click", () => {
+        document.body.classList.toggle("shopping-mode");
+        const active = document.body.classList.contains("shopping-mode");
+        document.getElementById("shoppingModeButton").textContent = active ? "Exit Shopping Mode" : "Shopping Mode";
+        if (active) document.getElementById("shopping-list")?.scrollIntoView({ block: "start" });
+      });
+    }
+
+    function itemTemplate(item) {
+      const owner = item.claimed_by ? `Claimed by ${item.claimed_by}` : "Unclaimed";
+      const buttonText = item.claimed_by ? "Change" : "Claim";
+      return `
+        <li class="claim-item">
+          <div class="claim-top">
+            <div>
+              <div class="claim-title">${escapeHtml(item.item)}</div>
+              <div class="claim-detail">${escapeHtml(item.detail || "")}</div>
+              <div class="claim-owner">${escapeHtml(owner)}</div>
+            </div>
+            <button class="claim-button${item.claimed_by ? " secondary" : ""}" type="button" data-claim-id="${escapeHtml(item.id)}">${buttonText}</button>
+          </div>
+        </li>`;
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    async function loadClaims() {
+      const status = document.getElementById("claimStatus");
+      try {
+        const response = await fetch("/api/items", { cache: "no-store" });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        const items = data.items || [];
+
+        for (const category of Object.keys(categoryLabels)) {
+          const list = document.querySelector(`[data-claim-category="${category}"]`);
+          const rows = items.filter((item) => item.category === category);
+          if (!list) continue;
+          list.innerHTML = rows.length ? rows.map(itemTemplate).join("") : "<li>No items yet.</li>";
+        }
+
+        document.querySelectorAll("[data-claim-id]").forEach((button) => {
+          button.addEventListener("click", () => claimItem(button.dataset.claimId));
+        });
+        if (status) status.textContent = "Shared signup list is live. Claim changes save for everyone.";
+      } catch (error) {
+        if (status) status.textContent = "Shared signup list could not load. Try refreshing in a minute.";
+      }
+    }
+
+    async function claimItem(id) {
+      const name = prompt("Put whose name next to this item. Leave blank to clear it.");
+      if (name === null) return;
+
+      const status = document.getElementById("claimStatus");
+      if (status) status.textContent = "Saving...";
+
+      try {
+        const response = await fetch("/api/items", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ id, claimed_by: name })
+        });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        await loadClaims();
+      } catch (error) {
+        if (status) status.textContent = "Could not save that claim. Try again.";
+      }
+    }
+
+    function scrollToCurrentHash() {
+      if (!location.hash) return;
+      const target = document.querySelector(location.hash);
+      if (target) target.scrollIntoView({ block: "start" });
+    }
+
+    setupShoppingTools();
+    loadClaims();
+    window.addEventListener("load", () => setTimeout(scrollToCurrentHash, 120));
+    window.addEventListener("hashchange", () => setTimeout(scrollToCurrentHash, 30));
+  </script>
 </body>
 </html>
