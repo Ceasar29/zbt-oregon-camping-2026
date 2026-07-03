@@ -26,12 +26,6 @@ export async function onRequestGet({ env }) {
 }
 
 export async function onRequestPost({ request, env }) {
-  const expectedToken = String(env.EDIT_TOKEN || "");
-  const providedToken = request.headers.get("X-Edit-Token") || "";
-  if (!expectedToken || providedToken !== expectedToken) {
-    return json({ error: "Invalid edit token" }, { status: 403 });
-  }
-
   let body;
   try {
     body = await request.json();

@@ -1,4 +1,6 @@
-CREATE TABLE IF NOT EXISTS signup_items (
+DROP TABLE IF EXISTS signup_items;
+
+CREATE TABLE signup_items (
   id TEXT PRIMARY KEY,
   category TEXT NOT NULL,
   item TEXT NOT NULL,
@@ -8,28 +10,20 @@ CREATE TABLE IF NOT EXISTS signup_items (
   updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-INSERT OR IGNORE INTO signup_items (id, category, item, detail, claimed_by, sort_order) VALUES
-('costco_run', 'costco', 'Costco bulk run', 'Main bulk run for as much as we can get at Costco.', 'Jason, David, Squiggles', 10),
-('costco_buns', 'costco', 'Burger buns', '12-16 buns for Thursday burgers.', '', 20),
-('costco_burger_toppings', 'costco', 'Burger toppings', 'Lettuce, tomatoes, onions, sliced cheese.', '', 30),
-('costco_corn', 'costco', 'Corn', '10-12 ears.', '', 40),
-('costco_breakfast', 'costco', 'Easy breakfasts', 'Muffins, pastries, cereal, milk, fruit.', '', 50),
-('costco_lunch', 'costco', 'Lunch supplies', 'Sandwich bread, cold cuts, sliced cheese.', '', 60),
-('costco_snacks', 'costco', 'Snacks', 'Chips, salsa, queso, guac, pretzels, M&Ms, cookies, apples.', '', 70),
-('costco_drinks', 'costco', 'Drinks', 'Water, Gatorade/sports drinks, soda, beer/drinks as wanted.', '', 80),
-('costco_ice', 'costco', 'Ice', 'Enough for coolers and drinks.', '', 90),
-('costco_supplies', 'costco', 'Disposable supplies', 'Red cups, plates, forks, knives, spoons, Ziplocks, trash bags, paper towels.', '', 100),
-('not_costco_burger_meat', 'not_costco', 'Burger meat', '14-16 patties or meat for patties; butcher/store/bring.', '', 10),
-('not_costco_friday_dinner', 'not_costco', 'Friday dinner protein', 'Steak / tri-tip or equivalent for 10.', '', 20),
-('not_costco_saturday_dinner', 'not_costco', 'Saturday dinner protein', 'Pork tenderloin or chicken for 10.', '', 30),
-('not_costco_dinner_sides', 'not_costco', 'Dinner sides', 'Zucchini, salad, garlic bread, asparagus, potato salad.', '', 40),
-('not_costco_condiments', 'not_costco', 'Condiments / pantry gaps', 'Ketchup, mustard, mayo, butter, cooking oil, salt, pepper, coffee, creamer.', '', 50),
-('not_costco_toilet_paper', 'not_costco', 'Toilet paper', 'Bring if not covered by Costco run or campground supplies.', '', 60),
-('gear_weber', 'gear', 'Weber + propane', 'Elgin is bringing this again.', 'Elgin', 10),
-('gear_coolers', 'gear', 'Coolers / ice chests', 'Need enough for shared food and drinks.', '', 20),
-('gear_food_bins', 'gear', 'Hard-sided food bins', 'For food storage; do not leave food in tents.', '', 30),
-('gear_cooking_tools', 'gear', 'Cooking tools', 'Spatula, tongs, knife, cutting board, foil, serving tools.', '', 40),
-('gear_stove_backup', 'gear', 'Backup stove / fuel', 'Optional backup if someone has one.', '', 50),
-('gear_lighting', 'gear', 'Lanterns / camp lights', 'Helpful around the sites at night.', '', 60),
-('gear_wash', 'gear', 'Dish soap + sponge', 'Shared kitchen cleanup.', '', 70),
-('gear_games', 'gear', 'Games', 'Corn hole, ladder toss, dominoes, cards.', '', 80);
+INSERT INTO signup_items (id, category, item, detail, claimed_by, sort_order) VALUES
+('costco_run', 'costco', 'Costco bulk run - food, drinks, ice, and paper supplies', 'Jason, David, and Squiggles are getting the Costco food/drinks/supplies run. Individual veggies/snacks/drinks do not need separate claims.', 'Jason, David, Squiggles', 10),
+('gear_grill_1', 'gear', 'Propane grill with gas #1', 'Elgin is bringing one propane grill with gas.', 'Elgin', 10),
+('gear_grill_2', 'gear', 'Propane grill with gas #2', 'Need one more propane grill with gas.', '', 20),
+('gear_cooler_1', 'gear', 'Cooler / ice chest #1', 'Elgin is bringing one small cooler.', 'Elgin - small cooler', 30),
+('gear_cooler_2', 'gear', 'Cooler / ice chest #2', 'Medium preferred if possible.', '', 40),
+('gear_cooler_3', 'gear', 'Cooler / ice chest #3', 'Medium preferred if possible.', '', 50),
+('gear_cooler_4', 'gear', 'Cooler / ice chest #4', 'Extra cooler slot if needed.', '', 60),
+('gear_food_bins', 'gear', 'Hard-sided food bins', 'For shared food storage; do not leave food in tents.', '', 70),
+('gear_cooking_tools', 'gear', 'Cooking tools', 'Spatula, tongs, knife, cutting board, foil, serving tools.', '', 80),
+('gear_lighting', 'gear', 'Lantern / shared camp lights', 'Everybody can bring their own lights, but one shared lantern/camp-light setup would help.', '', 90),
+('gear_wash', 'gear', 'Dish soap + sponge', 'Shared kitchen cleanup.', '', 100),
+('game_cornhole', 'games', 'Corn hole', 'Claim if you can bring it.', '', 10),
+('game_ladder', 'games', 'Ladder toss', 'Claim if you can bring it.', '', 20),
+('game_dominoes', 'games', 'Dominoes', 'Claim if you can bring it.', '', 30),
+('game_cards', 'games', 'Deck of cards', 'Claim if you can bring it.', '', 40),
+('game_other', 'games', 'Other game', 'Claim with your name and what game you are bringing.', '', 50);
