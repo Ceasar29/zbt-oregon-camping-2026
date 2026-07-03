@@ -492,6 +492,89 @@
       border-top: 9px solid var(--ink);
     }
 
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      width: min(1180px, calc(100% - 36px));
+      margin: 24px auto 0;
+    }
+
+    .quick-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      color: var(--forest);
+      font-weight: 900;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 8px 18px rgba(23, 33, 27, .06);
+    }
+
+    .planning-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .planning-card {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      box-shadow: 0 10px 24px rgba(23, 33, 27, .06);
+    }
+
+    .planning-card h3 {
+      margin: 0 0 8px;
+      color: var(--forest);
+      font-size: 20px;
+      line-height: 1.15;
+    }
+
+    .planning-card ul,
+    .planning-card ol,
+    .compact-list {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .planning-card li,
+    .compact-list li {
+      margin: 0 0 6px;
+    }
+
+    .planning-card strong,
+    .compact-list strong {
+      color: var(--ink);
+    }
+
+    .shopping-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .tagline {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--clay);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
     .note {
       padding: 18px;
       border-left: 5px solid var(--lake);
@@ -525,7 +608,10 @@
 
       .section-head,
       .map-wrap,
-      .people-grid {
+      .people-grid,
+      .quick-links,
+      .planning-grid,
+      .shopping-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -594,6 +680,13 @@
       <strong>16 people max</strong>
     </div>
   </div>
+
+  <nav class="quick-links" aria-label="Planning links">
+    <a href="#meal-plan">Meal Plan</a>
+    <a href="#shopping-list">Shopping List</a>
+    <a href="#bringing">Who Is Bringing What</a>
+    <a href="#remember">Remember To Bring</a>
+  </nav>
 
   <main>
     <section id="details">
@@ -670,6 +763,193 @@
           </div>
         </div>
       </article>
+    </section>
+
+    <section id="meal-plan">
+      <div class="section-head">
+        <h2>Meal Plan</h2>
+        <p>Drafted for the 2026 Oregon trip with 10 confirmed people, scaled down from the bigger 2024-style list.</p>
+      </div>
+      <div class="planning-grid">
+        <article class="planning-card">
+          <span class="tagline">Thursday dinner</span>
+          <h3>Burgers + Corn</h3>
+          <ul>
+            <li>About 14-16 burger patties total</li>
+            <li>12-16 buns, lettuce, tomatoes, onions, cheese</li>
+            <li>Corn</li>
+            <li>Macaroni salad / easy side</li>
+          </ul>
+        </article>
+        <article class="planning-card">
+          <span class="tagline">Friday</span>
+          <h3>Breakfast, Lunch, Dinner</h3>
+          <ul>
+            <li><strong>Breakfast:</strong> easy Costco breakfast: muffins, cereal, milk, fruit, coffee</li>
+            <li><strong>Lunch:</strong> sandwiches, chips, cookies, apples</li>
+            <li><strong>Dinner:</strong> steak or tri-tip, zucchini, salad, garlic bread</li>
+          </ul>
+        </article>
+        <article class="planning-card">
+          <span class="tagline">Saturday</span>
+          <h3>Breakfast, Lunch, Dinner</h3>
+          <ul>
+            <li><strong>Breakfast:</strong> eggs, bacon or sausage, hash browns, tortillas, shredded cheese</li>
+            <li><strong>Lunch:</strong> sandwiches, chips, cookies, apples</li>
+            <li><strong>Dinner:</strong> pork tenderloin or chicken, potato salad, garlic bread, asparagus</li>
+          </ul>
+        </article>
+        <article class="planning-card">
+          <span class="tagline">Sunday breakfast</span>
+          <h3>Easy Pack-Up Breakfast</h3>
+          <ul>
+            <li>Muffins</li>
+            <li>Pastries</li>
+            <li>Coffee</li>
+            <li>Use up fruit/snacks before checkout</li>
+          </ul>
+        </article>
+      </div>
+      <p class="note" style="margin-top:18px"><strong>Oregon adjustment:</strong> plan for 10 people, not the old 12-13 person list. This trip has campsite fire pits, but we should still use camp stoves / portable grills for real meals and check fire restrictions before relying on open-fire cooking.</p>
+    </section>
+
+    <section id="shopping-list">
+      <div class="section-head">
+        <h2>Shopping List</h2>
+        <p>Starter quantities for 10 people. Treat this as the first pass before people claim items.</p>
+      </div>
+      <div class="shopping-grid">
+        <article class="planning-card">
+          <h3>Meals</h3>
+          <ul>
+            <li>14-16 burger patties or meat for patties</li>
+            <li>12-16 burger buns</li>
+            <li>2 heads lettuce, 4 tomatoes, 2 onions, sliced cheese</li>
+            <li>10-12 ears corn</li>
+            <li>1 large macaroni salad or potato salad</li>
+            <li>2 loaves sandwich bread</li>
+            <li>Cold cuts: turkey, roast beef, salami, ham</li>
+            <li>1 pack sliced cheese for sandwiches</li>
+            <li>Steak / tri-tip for 10, or equivalent dinner protein</li>
+            <li>2-3 zucchini, salad kit, garlic bread</li>
+            <li>2 dozen eggs, bacon or sausage, hash browns, tortillas, shredded cheese</li>
+            <li>Pork tenderloin or chicken dinner protein for 10</li>
+            <li>Muffins / pastries for easy breakfasts</li>
+          </ul>
+        </article>
+        <article class="planning-card">
+          <h3>Pantry + Snacks</h3>
+          <ul>
+            <li>Ketchup, mustard, mayo</li>
+            <li>Chips, salsa, queso, guac</li>
+            <li>Peanut butter pretzels</li>
+            <li>M&amp;Ms</li>
+            <li>Cookies, apples, bananas, melon</li>
+            <li>Butter</li>
+            <li>Coffee, creamer, coffee cups</li>
+            <li>Salt, pepper, cooking oil</li>
+          </ul>
+        </article>
+        <article class="planning-card">
+          <h3>Drinks + Supplies</h3>
+          <ul>
+            <li>2-3 cases water</li>
+            <li>1 case Gatorade / sports drinks</li>
+            <li>1 case soda</li>
+            <li>Beer / drinks as wanted</li>
+            <li>Whiskey / tequila if wanted</li>
+            <li>Ice <strong>(Costco)</strong></li>
+            <li>Propane for stoves / grill</li>
+            <li>Red cups, plates, forks, knives, spoons</li>
+            <li>Ziplock bags for sandwiches</li>
+            <li>Trash bags, paper towels, toilet paper</li>
+            <li>Sponge and dish soap</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="bringing">
+      <div class="section-head">
+        <h2>Who Is Bringing What</h2>
+        <p>Current draft assignments. This is the part that would be nicest to make live-editable once we add a small backend.</p>
+      </div>
+      <div class="grid three">
+        <article class="planning-card">
+          <h3>Named Owners</h3>
+          <ul>
+            <li><strong>Elgin:</strong> Weber + propane</li>
+            <li><strong>Jason:</strong> prior-list idea: macaroni salad, sponge, lantern</li>
+            <li><strong>Squiggles:</strong> prior-list idea: flat griddle</li>
+          </ul>
+        </article>
+        <article class="planning-card">
+          <h3>Needs Claiming</h3>
+          <ul>
+            <li>Costco bulk food run</li>
+            <li>Meat / dinner protein run</li>
+            <li>Drinks and ice</li>
+            <li>Breakfast supplies</li>
+            <li>Sandwich lunch supplies</li>
+            <li>Snacks and pantry stuff</li>
+          </ul>
+        </article>
+        <article class="planning-card">
+          <h3>Group Gear</h3>
+          <ul>
+            <li>Coolers / ice chests</li>
+            <li>Cooking tools</li>
+            <li>Food storage bins</li>
+            <li>Games: corn hole, ladder toss, dominoes, cards</li>
+          </ul>
+        </article>
+      </div>
+      <p class="note" style="margin-top:18px"><strong>Live signup idea:</strong> this public GitHub Pages site can show the list, but it cannot save shared edits by itself. To let people click an item and put their name next to it, we need a tiny free backend such as Cloudflare Worker + D1, Supabase free tier, or a Google Sheet/Form setup.</p>
+    </section>
+
+    <section id="remember">
+      <div class="section-head">
+        <h2>Remember To Bring</h2>
+        <p>Personal packing reminders from the old list, plus a couple Oregon-specific food-storage reminders.</p>
+      </div>
+      <div class="grid three">
+        <article class="planning-card">
+          <h3>Personal Stuff</h3>
+          <ul>
+            <li>Bug spray</li>
+            <li>Towel</li>
+            <li>Bathing suit</li>
+            <li>Hiking shoes</li>
+            <li>Sunscreen</li>
+            <li>Water bottle</li>
+            <li>Backpack to carry food / drinks</li>
+          </ul>
+        </article>
+        <article class="planning-card">
+          <h3>Camp + Kitchen</h3>
+          <ul>
+            <li>Coolers / ice chests</li>
+            <li>Hard-sided food bins</li>
+            <li>Cooking tools</li>
+            <li>Lanterns / lights</li>
+            <li>Dish soap and sponge</li>
+            <li>Trash bags and paper towels</li>
+            <li>Propane stove / portable grill</li>
+          </ul>
+        </article>
+        <article class="planning-card">
+          <h3>Fun Stuff</h3>
+          <ul>
+            <li>Corn hole</li>
+            <li>Ladder toss</li>
+            <li>Dominoes</li>
+            <li>Deck of cards</li>
+            <li>Lake gear</li>
+            <li>Camp chairs</li>
+          </ul>
+        </article>
+      </div>
+      <p class="note" style="margin-top:18px"><strong>Food reminder:</strong> do not keep food, trash, toiletries, or scented stuff in tents. Use locked cars or hard-sided containers unless the park confirms food lockers at our sites.</p>
     </section>
 
     <section id="sites">
