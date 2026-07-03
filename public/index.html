@@ -951,7 +951,7 @@
             <div class="fact"><b>Check-in</b><span>2:00 PM</span></div>
             <div class="fact"><b>Check-out</b><span>12:00 noon</span></div>
             <div class="fact"><b>Contact</b><span>(541) 774-8183 · parksinfo@jacksoncountyOR.gov</span></div>
-            <div class="fact"><b>Group Code</b><span>90143006</span></div>
+            <div class="fact"><b>Reservation codes</b><span>Not posted publicly. Ask Elgin if you need them.</span></div>
           </div>
         </article>
         <article class="panel">
@@ -994,13 +994,14 @@
             <ol class="people-list">
               <li>Andrew</li>
               <li>Crash</li>
-              <li>Drew <span>(can't go if it spans July 22 - grandma's birthday)</span></li>
-              <li>Garcia <span>(can't go if it spans July 26 - birthday)</span></li>
-              <li>Jay Hite <span>(won't go unless it's a house)</span></li>
+              <li>Drew</li>
+              <li>Garcia</li>
+              <li>Jay Hite</li>
               <li>John</li>
-              <li>Jose <span>(can't go if it spans June 10 from here on out - brother passing anniversary)</span></li>
-              <li>Manny <span>(won't go unless it's a house)</span></li>
+              <li>Jose</li>
+              <li>Manny</li>
             </ol>
+            <p class="status-line">Private availability notes are kept off the public page.</p>
           </div>
           <div class="people-card">
             <h3>Come Sometimes, Not This Year</h3>
@@ -1169,7 +1170,7 @@
     <section id="bringing">
       <div class="section-head">
         <h2>Who Is Bringing What</h2>
-        <p>Click Claim, enter your name, and it saves for everyone. The Costco bulk run is already assigned to Jason, David, and Squiggles.</p>
+        <p>Click Claim, enter the trip edit code, then put your name next to an item. The Costco bulk run is already assigned to Jason, David, and Squiggles.</p>
       </div>
       <div class="grid three" id="claimBoard">
         <article class="planning-card">
@@ -1241,7 +1242,7 @@
       <div class="grid two">
         <article class="site-card">
           <h3>Site D24</h3>
-          <p>Full shade, basic site, 12' x 12' tent pad. Confirmation code <strong>05782669</strong>.</p>
+          <p>Full shade, basic site, 12' x 12' tent pad. Confirmation code is kept off the public page.</p>
           <div class="site-meta">
             <span class="pill">$98 total</span>
             <span class="pill">76 ft x 12 ft max</span>
@@ -1251,7 +1252,7 @@
         </article>
         <article class="site-card">
           <h3>Site D25</h3>
-          <p>Partial shade, basic site, 12' x 12' tent pad. Confirmation code <strong>20569674</strong>.</p>
+          <p>Partial shade, basic site, 12' x 12' tent pad. Confirmation code is kept off the public page.</p>
           <div class="site-meta">
             <span class="pill">$98 total</span>
             <span class="pill">62 ft x 12 ft max</span>
@@ -1544,6 +1545,8 @@
     async function claimItem(id) {
       const name = prompt("Put whose name next to this item. Leave blank to clear it.");
       if (name === null) return;
+      const editToken = getEditToken();
+      if (!editToken) return;
 
       const status = document.getElementById("claimStatus");
       if (status) status.textContent = "Saving...";
@@ -1551,7 +1554,7 @@
       try {
         const response = await fetch("/api/items", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: { "Content-Type": "application/json", "X-Edit-Token": editToken },
           body: JSON.stringify({ id, claimed_by: name })
         });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -1559,6 +1562,23 @@
       } catch (error) {
         if (status) status.textContent = "Could not save that claim. Try again.";
       }
+    }
+
+    function getEditToken() {
+      const params = new URLSearchParams(location.search);
+      const urlToken = params.get("edit");
+      if (urlToken) {
+        sessionStorage.setItem("zbt-oregon-edit-token", urlToken);
+        return urlToken;
+      }
+
+      const saved = sessionStorage.getItem("zbt-oregon-edit-token");
+      if (saved) return saved;
+
+      const entered = prompt("Enter the trip edit code to update the shared signup list.");
+      if (!entered) return "";
+      sessionStorage.setItem("zbt-oregon-edit-token", entered.trim());
+      return entered.trim();
     }
 
     function scrollToCurrentHash() {

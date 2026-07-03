@@ -1,7 +1,7 @@
 {
   "name": "zbt-oregon-camping-2026",
   "compatibility_date": "2026-07-03",
-  "pages_build_output_dir": ".",
+  "pages_build_output_dir": "public",
   "d1_databases": [
     {
       "binding": "DB",

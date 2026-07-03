@@ -26,11 +26,21 @@ export async function onRequestGet({ env }) {
 }
 
 export async function onRequestPost({ request, env }) {
+  const expectedToken = String(env.EDIT_TOKEN || "");
+  const providedToken = request.headers.get("X-Edit-Token") || "";
+  if (!expectedToken || providedToken !== expectedToken) {
+    return json({ error: "Invalid edit token" }, { status: 403 });
+  }
+
   let body;
   try {
     body = await request.json();
   } catch {
     return json({ error: "Invalid JSON" }, { status: 400 });
+  }
+
+  if (!body || typeof body !== "object" || Array.isArray(body)) {
+    return json({ error: "Invalid JSON object" }, { status: 400 });
   }
 
   const id = String(body.id || "").trim();
