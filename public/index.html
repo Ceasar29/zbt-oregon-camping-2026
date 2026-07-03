@@ -232,6 +232,10 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
+    .grid.four {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
     .panel,
     .activity,
     .site-card,
@@ -793,6 +797,7 @@
     @media (max-width: 900px) {
       .trip-strip,
       .grid.three,
+      .grid.four,
       .amenities {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -819,6 +824,7 @@
       .trip-strip,
       .grid.two,
       .grid.three,
+      .grid.four,
       .amenities,
       .shopping-grid {
         grid-template-columns: 1fr;
@@ -1095,14 +1101,14 @@
         <article class="shopping-area">
           <h3>Costco Drinks + Supplies</h3>
           <ul class="check-list">
-            <li><label><input type="checkbox" data-shop-id="drinks_water"><span>2-3 cases water</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="drinks_water"><span>4 cases water <span>We have run out the last two camping trips.</span></span></label></li>
             <li><label><input type="checkbox" data-shop-id="drinks_gatorade"><span>1 case Gatorade / sports drinks</span></label></li>
             <li><label><input type="checkbox" data-shop-id="drinks_soda"><span>1 case soda</span></label></li>
             <li><label><input type="checkbox" data-shop-id="drinks_beer"><span>Beer / drinks as wanted</span></label></li>
             <li><label><input type="checkbox" data-shop-id="drinks_liquor"><span>Whiskey / tequila if wanted</span></label></li>
             <li><label><input type="checkbox" data-shop-id="drinks_ice"><span>Ice</span></label></li>
             <li><label><input type="checkbox" data-shop-id="supplies_cups"><span>Red cups</span></label></li>
-            <li><label><input type="checkbox" data-shop-id="supplies_plates"><span>Plates, forks, knives, spoons</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="supplies_plates"><span>Plates, bowls, forks, knives, spoons</span></label></li>
             <li><label><input type="checkbox" data-shop-id="supplies_ziplocks"><span>Ziplock bags for sandwiches</span></label></li>
             <li><label><input type="checkbox" data-shop-id="supplies_trash"><span>Trash bags</span></label></li>
             <li><label><input type="checkbox" data-shop-id="supplies_paper"><span>Paper towels</span></label></li>
@@ -1116,6 +1122,7 @@
             <li><label><input type="checkbox" data-shop-id="bring_food_bins"><span>Hard-sided food bins</span></label></li>
             <li><label><input type="checkbox" data-shop-id="bring_coolers"><span>Coolers / ice chests</span></label></li>
             <li><label><input type="checkbox" data-shop-id="bring_tools"><span>Cooking tools <span>Spatula, tongs, knife, cutting board, foil.</span></span></label></li>
+            <li><label><input type="checkbox" data-shop-id="bring_serving_utensils"><span>Serving utensils <span>Big spoons, tongs, serving knife, opener, etc.</span></span></label></li>
             <li><label><input type="checkbox" data-shop-id="bring_lights"><span>Lanterns / camp lights</span></label></li>
             <li><label><input type="checkbox" data-shop-id="bring_dish"><span>Dish soap + sponge</span></label></li>
             <li><label><input type="checkbox" data-shop-id="bring_games"><span>Games <span>Corn hole, ladder toss, dominoes, cards.</span></span></label></li>
@@ -1125,10 +1132,43 @@
       </div>
     </section>
 
+    <section id="store-stops">
+      <div class="section-head">
+        <h2>Store Stops</h2>
+        <p>Useful map links for the Costco bulk run, last-minute backup stores, and the campground destination.</p>
+      </div>
+      <div class="grid four">
+        <article class="planning-card">
+          <span class="tagline">Bulk run</span>
+          <h3>Costco Central Point</h3>
+          <p>3075 Hamrick Rd, Central Point, OR 97502. This is the closest Costco that makes sense on the way in from I-5.</p>
+          <p><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Costco%203075%20Hamrick%20Rd%20Central%20Point%20OR%2097502" target="_blank" rel="noopener">Open Costco In Maps</a></p>
+        </article>
+        <article class="planning-card">
+          <span class="tagline">Destination</span>
+          <h3>Campground</h3>
+          <p>Joseph H Stewart County Park, 35251 Oregon 62, Trail, OR 97541. Use this for final directions to camp.</p>
+          <p><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Joseph%20H%20Stewart%20County%20Park%2035251%20Oregon%2062%20Trail%20OR%2097541" target="_blank" rel="noopener">Open Camp In Maps</a></p>
+        </article>
+        <article class="planning-card">
+          <span class="tagline">Closest Walmart</span>
+          <h3>Walmart Eagle Point</h3>
+          <p>11500 Hannon Rd, Eagle Point, OR 97524. Roughly 25 miles / 30-35 minutes from camp, depending on traffic.</p>
+          <p><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Walmart%2011500%20Hannon%20Rd%20Eagle%20Point%20OR%2097524" target="_blank" rel="noopener">Open Walmart In Maps</a></p>
+        </article>
+        <article class="planning-card">
+          <span class="tagline">Closest Safeway</span>
+          <h3>Safeway Medford</h3>
+          <p>3169 Crater Lake Hwy, Medford, OR 97504. Roughly 30 miles / 40 minutes from camp, so use it before heading up OR-62 if possible.</p>
+          <p><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=Safeway%203169%20Crater%20Lake%20Hwy%20Medford%20OR%2097504" target="_blank" rel="noopener">Open Safeway In Maps</a></p>
+        </article>
+      </div>
+    </section>
+
     <section id="bringing">
       <div class="section-head">
         <h2>Who Is Bringing What</h2>
-        <p>Click Claim and put your name next to an item. For games, include what you are bringing if it is not already listed.</p>
+        <p>Click Claim and put your name next to an item. Items where we need more than one show up as separate rows so different people can claim each slot.</p>
       </div>
       <div class="grid three" id="claimBoard">
         <article class="planning-card">
@@ -1171,6 +1211,7 @@
             <li>Coolers / ice chests</li>
             <li>Hard-sided food bins</li>
             <li>Cooking tools</li>
+            <li>Serving utensils</li>
             <li>Lanterns / lights</li>
             <li>Dish soap and sponge</li>
             <li>Trash bags and paper towels</li>
