@@ -11,7 +11,7 @@ CREATE TABLE signup_items (
 );
 
 INSERT INTO signup_items (id, category, item, detail, claimed_by, sort_order) VALUES
-('costco_run', 'costco', 'Costco bulk run - food, drinks, ice, and paper supplies', 'Jason, David, and Squiggles are getting the Costco food/drinks/supplies run, including 4 cases of water and plates/bowls/forks/knives/spoons. Individual veggies/snacks/drinks do not need separate claims.', 'Jason, David, Squiggles', 10),
+('costco_run', 'costco', 'Costco bulk run - food, drinks, ice, and paper supplies', 'Jason, David, and Squiggles are getting the Costco food/drinks/supplies run, including 3 cases of water and plates/bowls/forks/knives/spoons. Individual veggies/snacks/drinks do not need separate claims.', 'Jason, David, Squiggles', 10),
 ('friday_sausages', 'costco', 'Friday dinner sausages', 'Pinky will pick these up from the butcher in Napa before he leaves.', 'Pinky', 20),
 ('gear_grill_1', 'gear', 'Propane grill with gas #1', 'Elgin is bringing one propane grill with gas.', 'Elgin', 10),
 ('gear_grill_2', 'gear', 'Propane grill with gas #2', 'Need one more propane grill with gas.', '', 20),
@@ -26,7 +26,7 @@ INSERT INTO signup_items (id, category, item, detail, claimed_by, sort_order) VA
 ('gear_lighting', 'gear', 'Lantern / shared camp lights', 'Everybody can bring their own lights, but one shared lantern/camp-light setup would help.', '', 110),
 ('gear_wash', 'gear', 'Dish soap + sponge', 'Shared kitchen cleanup.', '', 120),
 ('game_cornhole', 'games', 'Corn hole', 'Claim if you can bring it.', '', 10),
-('game_ladder', 'games', 'Ladder toss', 'Claim if you can bring it.', '', 20),
-('game_dominoes', 'games', 'Dominoes', 'Claim if you can bring it.', '', 30),
-('game_cards', 'games', 'Deck of cards', 'Claim if you can bring it.', '', 40),
+('game_ladder', 'games', 'Ladder ball', 'Pinky is bringing this.', 'Pinky', 20),
+('game_dominoes', 'games', 'Dominoes', 'Pinky is bringing this.', 'Pinky', 30),
+('game_cards', 'games', 'Deck of cards', 'Pinky is bringing this.', 'Pinky', 40),
 ('game_other', 'games', 'Other game', 'Claim with your name and what game you are bringing.', '', 50);
