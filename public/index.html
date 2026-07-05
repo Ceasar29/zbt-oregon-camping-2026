@@ -619,7 +619,7 @@
 
     .shopping-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
     }
 
@@ -696,6 +696,14 @@
       flex-wrap: wrap;
       gap: 10px;
       margin-bottom: 16px;
+    }
+
+    .shopping-actions .button.secondary {
+      background: var(--white);
+      border-color: var(--line);
+      color: var(--forest);
+      box-shadow: 0 8px 18px rgba(23, 33, 27, .08);
+      backdrop-filter: none;
     }
 
     .shopping-area {
@@ -1102,7 +1110,7 @@
             <li><label><input type="checkbox" data-shop-id="costco_toppings"><span>Burger/sandwich toppings <span>Tomatoes, 1 head lettuce for sandwiches, 1 onion, sliced cheese, shredded cheese.</span></span></label></li>
             <li><label><input type="checkbox" data-shop-id="costco_sides"><span>Sides <span>Potato salad, green salad, asparagus, zucchini, and corn.</span></span></label></li>
             <li><label><input type="checkbox" data-shop-id="costco_lunch"><span>Lunch supplies <span>About 2 lb cold cuts, sliced cheese, cookies, apples, avocado for Saturday lunch, plus Sunday taco salad: shredded lettuce, sour cream, beans, ground turkey, tomato. Reuse shredded cheese.</span></span></label></li>
-            <li><label><input type="checkbox" data-shop-id="costco_snacks"><span>Snacks <span>1 bag tortilla chips, 1 bag flavored chips, salsa, queso, guac, pretzels, M&amp;Ms/candy, extra cookies.</span></span></label></li>
+            <li><label><input type="checkbox" data-shop-id="costco_snacks"><span>Snacks <span>1 bag tortilla chips, 1 bag flavored chips, salsa, queso, M&amp;Ms/candy, extra cookies.</span></span></label></li>
           </ul>
         </article>
         <article class="shopping-area">
@@ -1121,22 +1129,9 @@
             <li><label><input type="checkbox" data-shop-id="supplies_ziplocks"><span>Ziplock bags for sandwiches</span></label></li>
             <li><label><input type="checkbox" data-shop-id="supplies_trash"><span>Trash bags</span></label></li>
             <li><label><input type="checkbox" data-shop-id="supplies_paper"><span>Paper towels</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="supplies_pantry"><span>Salt, pepper, and cooking oil <span>For the shared kitchen bin.</span></span></label></li>
             <li><label><input type="checkbox" data-shop-id="supplies_charcoal"><span>1 bag charcoal briquettes <span>For the upright campsite grills.</span></span></label></li>
             <li><label><input type="checkbox" data-shop-id="supplies_tp"><span>Toilet paper <span>Pinky / Jason is bringing this.</span></span></label></li>
-          </ul>
-        </article>
-        <article class="shopping-area">
-          <h3>Not Costco / Bring From Home</h3>
-          <ul class="check-list">
-            <li><label><input type="checkbox" data-shop-id="bring_grills"><span>Propane grills with gas <span>Need two total; Elgin has one.</span></span></label></li>
-            <li><label><input type="checkbox" data-shop-id="bring_food_bins"><span>Hard-sided food bins</span></label></li>
-            <li><label><input type="checkbox" data-shop-id="bring_coolers"><span>Coolers / ice chests</span></label></li>
-            <li><label><input type="checkbox" data-shop-id="bring_tools"><span>Cooking tools <span>Spatula, tongs, knife, cutting board, foil.</span></span></label></li>
-            <li><label><input type="checkbox" data-shop-id="bring_serving_utensils"><span>Serving utensils <span>Pinky / Jason is bringing big spoons, tongs, serving knife, opener, etc.</span></span></label></li>
-            <li><label><input type="checkbox" data-shop-id="bring_lights"><span>Lanterns / camp lights</span></label></li>
-            <li><label><input type="checkbox" data-shop-id="bring_dish"><span>Dish soap + sponge <span>Pinky / Jason is bringing these.</span></span></label></li>
-            <li><label><input type="checkbox" data-shop-id="bring_games"><span>Games <span>Corn hole, ladder toss, dominoes, cards.</span></span></label></li>
-            <li><label><input type="checkbox" data-shop-id="bring_gaps"><span>Any Costco misses <span>Grab at Safeway / Walmart on the way.</span></span></label></li>
           </ul>
         </article>
       </div>
