@@ -12,6 +12,7 @@ CREATE TABLE signup_items (
 
 INSERT INTO signup_items (id, category, item, detail, claimed_by, sort_order) VALUES
 ('costco_run', 'costco', 'Costco bulk run - food, drinks, ice, and paper supplies', 'Jason, David, and Squiggles are getting the Costco food/drinks/supplies run, including 4 cases of water and plates/bowls/forks/knives/spoons. Individual veggies/snacks/drinks do not need separate claims.', 'Jason, David, Squiggles', 10),
+('friday_sausages', 'costco', 'Friday dinner sausages', 'Pinky will pick these up from the butcher in Napa before he leaves.', 'Pinky', 20),
 ('gear_grill_1', 'gear', 'Propane grill with gas #1', 'Elgin is bringing one propane grill with gas.', 'Elgin', 10),
 ('gear_grill_2', 'gear', 'Propane grill with gas #2', 'Need one more propane grill with gas.', '', 20),
 ('gear_cooler_1', 'gear', 'Cooler / ice chest #1', 'Elgin is bringing one small cooler.', 'Elgin - small cooler', 30),
