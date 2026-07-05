@@ -46,14 +46,20 @@
     }
     .target {
       position: absolute;
-      left: 43.3%;
-      top: 7.8%;
-      width: 5.2%;
-      height: 9.5%;
+      width: 1.9%;
+      height: 3.1%;
       border: 6px solid #e23d28;
       border-radius: 999px;
       box-shadow: 0 0 0 7px rgba(255, 211, 84, .92), 0 0 0 14px rgba(226, 61, 40, .28);
       pointer-events: none;
+    }
+    .target.d24 {
+      left: 44.75%;
+      top: 11.25%;
+    }
+    .target.d25 {
+      left: 43.95%;
+      top: 14.05%;
     }
     .pin {
       position: absolute;
@@ -112,7 +118,8 @@
     <div class="map-frame" aria-label="Official Joseph H Stewart campground map with D24 and D25 highlighted">
       <div class="map-canvas">
         <img src="assets/zbt-oregon/joseph-stewart-layout.png" alt="Official Joseph H Stewart County Park campground map">
-        <div class="target" aria-hidden="true"></div>
+        <div class="target d24" aria-hidden="true"></div>
+        <div class="target d25" aria-hidden="true"></div>
         <div class="pin">ZBT sites<br>D24 + D25</div>
       </div>
     </div>

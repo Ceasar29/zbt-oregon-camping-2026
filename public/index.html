@@ -479,14 +479,22 @@
 
     .site-map .target {
       position: absolute;
-      left: 43.3%;
-      top: 7.8%;
-      width: 5.2%;
-      height: 9.5%;
+      width: 1.9%;
+      height: 3.1%;
       border: clamp(3px, .6vw, 6px) solid #e23d28;
       border-radius: 999px;
       box-shadow: 0 0 0 clamp(4px, .7vw, 7px) rgba(255, 211, 84, .92), 0 0 0 clamp(8px, 1.2vw, 14px) rgba(226, 61, 40, .28);
       pointer-events: none;
+    }
+
+    .site-map .target.d24 {
+      left: 44.75%;
+      top: 11.25%;
+    }
+
+    .site-map .target.d25 {
+      left: 43.95%;
+      top: 14.05%;
     }
 
     .site-map .pin {
@@ -1076,7 +1084,7 @@
     <section id="shopping-list">
       <div class="section-head">
         <h2>Shopping List</h2>
-        <p>Costco bulk run list for Jason, David, and Squiggles. Checkmarks save on each person's phone only, so shoppers can use this as a live aisle list without changing the shared claim board.</p>
+        <p>Costco bulk run list for Elgin, Tex, Cody, Jason, David, and Squiggles. Checkmarks save on each person's phone only, so shoppers can use this as a live aisle list without changing the shared claim board.</p>
       </div>
       <div class="shopping-actions">
         <button class="button primary" type="button" id="shoppingModeButton">Shopping Mode</button>
@@ -1113,6 +1121,7 @@
             <li><label><input type="checkbox" data-shop-id="supplies_ziplocks"><span>Ziplock bags for sandwiches</span></label></li>
             <li><label><input type="checkbox" data-shop-id="supplies_trash"><span>Trash bags</span></label></li>
             <li><label><input type="checkbox" data-shop-id="supplies_paper"><span>Paper towels</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="supplies_charcoal"><span>1 bag charcoal briquettes <span>For the upright campsite grills.</span></span></label></li>
             <li><label><input type="checkbox" data-shop-id="supplies_tp"><span>Toilet paper <span>Pinky / Jason is bringing this.</span></span></label></li>
           </ul>
         </article>
@@ -1123,9 +1132,9 @@
             <li><label><input type="checkbox" data-shop-id="bring_food_bins"><span>Hard-sided food bins</span></label></li>
             <li><label><input type="checkbox" data-shop-id="bring_coolers"><span>Coolers / ice chests</span></label></li>
             <li><label><input type="checkbox" data-shop-id="bring_tools"><span>Cooking tools <span>Spatula, tongs, knife, cutting board, foil.</span></span></label></li>
-            <li><label><input type="checkbox" data-shop-id="bring_serving_utensils"><span>Serving utensils <span>Big spoons, tongs, serving knife, opener, etc.</span></span></label></li>
+            <li><label><input type="checkbox" data-shop-id="bring_serving_utensils"><span>Serving utensils <span>Pinky / Jason is bringing big spoons, tongs, serving knife, opener, etc.</span></span></label></li>
             <li><label><input type="checkbox" data-shop-id="bring_lights"><span>Lanterns / camp lights</span></label></li>
-            <li><label><input type="checkbox" data-shop-id="bring_dish"><span>Dish soap + sponge</span></label></li>
+            <li><label><input type="checkbox" data-shop-id="bring_dish"><span>Dish soap + sponge <span>Pinky / Jason is bringing these.</span></span></label></li>
             <li><label><input type="checkbox" data-shop-id="bring_games"><span>Games <span>Corn hole, ladder toss, dominoes, cards.</span></span></label></li>
             <li><label><input type="checkbox" data-shop-id="bring_gaps"><span>Any Costco misses <span>Grab at Safeway / Walmart on the way.</span></span></label></li>
           </ul>
@@ -1208,9 +1217,9 @@
             <li>Coolers / ice chests</li>
             <li>Hard-sided food bins</li>
             <li>Cooking utensils: pots, spatulas, grill tongs, salad tongs, pans (Pinky / Jason)</li>
-            <li>Serving utensils</li>
+            <li>Serving utensils: big spoons, tongs, serving knife, opener (Pinky / Jason)</li>
             <li>Lanterns / lights</li>
-            <li>Dish soap and sponge</li>
+            <li>Dish soap and sponge (Pinky / Jason)</li>
             <li>Trash bags and paper towels</li>
             <li>Toilet paper (Pinky / Jason)</li>
             <li>Propane stove / portable grill</li>
@@ -1264,7 +1273,8 @@
       </div>
       <div class="site-map" aria-label="Official Joseph H Stewart campground map with D24 and D25 highlighted">
         <img src="assets/zbt-oregon/joseph-stewart-layout.png" alt="Official Joseph H Stewart County Park campground map">
-        <div class="target" aria-hidden="true"></div>
+        <div class="target d24" aria-hidden="true"></div>
+        <div class="target d25" aria-hidden="true"></div>
         <div class="pin">ZBT sites<br>D24 + D25</div>
       </div>
       <p style="margin-top:14px"><a class="button primary" href="zbt-oregon-campsite-map.html" target="_blank" rel="noopener">Open Campground Map To Print</a></p>
@@ -1368,7 +1378,7 @@
           <h3>At The Sites</h3>
           <div class="facts">
             <div class="fact"><b>Picnic tables</b><span>Site photos show picnic tables at the campsites.</span></div>
-            <div class="fact"><b>Grill / fire ring</b><span>Site photos show upright grill/fire-ring style setups. Treat D24/D25 as likely having one, but still bring our own propane gear for real meals.</span></div>
+            <div class="fact"><b>Grill / fire ring</b><span>Site photos show upright grill/fire-ring style setups. Add 1 bag of charcoal briquettes to the Costco run for these, and still bring our own propane gear for real meals.</span></div>
             <div class="fact"><b>Firewood</b><span>Available at host sites A-6, B-3, C-51, and D-49 until 8:00 PM.</span></div>
             <div class="fact"><b>Cooking plan</b><span>Use the campsite grill/fire ring where it makes sense, plus Elgin's propane grill and Tex's cooking stove for controlled cooking.</span></div>
           </div>

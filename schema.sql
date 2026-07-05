@@ -11,7 +11,7 @@ CREATE TABLE signup_items (
 );
 
 INSERT INTO signup_items (id, category, item, detail, claimed_by, sort_order) VALUES
-('costco_run', 'costco', 'Costco bulk run - food, drinks, ice, and paper supplies', 'Jason, David, and Squiggles are getting the Costco food/drinks/supplies run, including 3 cases of water and plates/bowls/forks/knives/spoons. Individual veggies/snacks/drinks do not need separate claims.', 'Jason, David, Squiggles', 10),
+('costco_run', 'costco', 'Costco bulk run - food, drinks, ice, and paper supplies', 'Elgin, Tex, Cody, Jason, David, and Squiggles are doing the Costco food/drinks/supplies run together, including 3 cases of water, 1 bag charcoal briquettes, and plates/bowls/forks/knives/spoons. Individual veggies/snacks/drinks do not need separate claims.', 'Elgin, Tex, Cody, Jason, David, Squiggles', 10),
 ('friday_sausages', 'costco', 'Friday dinner sausages', 'Pinky will pick these up from the butcher in Napa before he leaves.', 'Pinky', 20),
 ('edibles', 'costco', 'Edibles', 'Elgin is bringing these.', 'Elgin', 30),
 ('gear_grill_1', 'gear', 'Propane grill with gas', 'Elgin is bringing a grill and propane.', 'Elgin', 10),
@@ -22,10 +22,9 @@ INSERT INTO signup_items (id, category, item, detail, claimed_by, sort_order) VA
 ('gear_cooler_4', 'gear', 'Cooler / ice chest #4', 'Tex is bringing one cooler.', 'Tex', 60),
 ('gear_food_bins', 'gear', 'Hard-sided food bins', 'For shared food storage; do not leave food in tents.', '', 70),
 ('gear_cooking_tools', 'gear', 'Cooking utensils', 'Pinky is bringing pots, spatulas, grill tongs, salad tongs, and pans.', 'Pinky', 80),
-('gear_serving_utensils_1', 'gear', 'Serving utensils #1', 'Big spoon, tongs, serving knife, opener, or similar shared kitchen tools.', '', 90),
-('gear_serving_utensils_2', 'gear', 'Serving utensils #2', 'Second slot in case someone else has a useful set.', '', 100),
+('gear_serving_utensils_1', 'gear', 'Serving utensils', 'Pinky is bringing serving utensils: big spoons, tongs, serving knife, opener, and similar shared kitchen tools.', 'Pinky', 90),
 ('gear_lighting', 'gear', 'Lantern / shared camp lights', 'Everybody can bring their own lights, but one shared lantern/camp-light setup would help.', '', 110),
-('gear_wash', 'gear', 'Dish soap + sponge', 'Shared kitchen cleanup.', '', 120),
+('gear_wash', 'gear', 'Dish soap + sponge', 'Pinky is bringing these for shared kitchen cleanup.', 'Pinky', 120),
 ('gear_toilet_paper', 'gear', 'Toilet paper', 'Pinky / Jason is bringing this.', 'Pinky', 130),
 ('game_cornhole', 'games', 'Corn hole', 'Claim if you can bring it.', '', 10),
 ('game_ladder', 'games', 'Ladder ball', 'Pinky is bringing this.', 'Pinky', 20),
